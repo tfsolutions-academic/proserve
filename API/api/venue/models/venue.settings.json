@@ -31,6 +31,17 @@
       "type": "component",
       "repeatable": true,
       "component": "contact.phone"
+    },
+    "picture": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }
