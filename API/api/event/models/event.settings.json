@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "name": "event",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "start_date": {
+      "type": "datetime"
+    },
+    "end_date": {
+      "type": "datetime"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "marriage",
+        "birthday",
+        "retirement",
+        "expo",
+        "spritual",
+        "other"
+      ]
+    },
+    "venue": {
+      "model": "venue"
+    },
+    "orgainizer": {
+      "model": "orgainizer"
+    },
+    "RSVPContent": {
+      "type": "richtext"
+    }
+  }
+}

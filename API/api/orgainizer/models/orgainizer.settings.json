@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orgainizers",
+  "info": {
+    "name": "orgainizer"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.phone"
+    }
+  }
+}

@@ -1,0 +1,9 @@
+Database
+-----------------------------
+name : proserve
+user     : proserver_admin
+password : pass!word
+
+Strapi
+----------------------------
+Admin   : proserve_admin@proserve.com/Pass4ward

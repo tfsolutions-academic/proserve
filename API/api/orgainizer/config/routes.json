@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/orgainizers",
+      "handler": "orgainizer.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/orgainizers/count",
+      "handler": "orgainizer.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/orgainizers/:id",
+      "handler": "orgainizer.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/orgainizers",
+      "handler": "orgainizer.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/orgainizers/:id",
+      "handler": "orgainizer.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/orgainizers/:id",
+      "handler": "orgainizer.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

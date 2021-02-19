@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_contact_phones",
+  "info": {
+    "name": "Phone",
+    "icon": "address-book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "number": {
+      "type": "string"
+    },
+    "whatsapp": {
+      "type": "boolean"
+    },
+    "primary": {
+      "type": "boolean"
+    }
+  }
+}

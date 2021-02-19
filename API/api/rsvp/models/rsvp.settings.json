@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rsvps",
+  "info": {
+    "name": "RSVP",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "event": {
+      "model": "event"
+    },
+    "adult": {
+      "type": "integer"
+    },
+    "kids": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}

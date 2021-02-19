@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "venues",
+  "info": {
+    "name": "venue",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "capacity": {
+      "type": "integer"
+    },
+    "address": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contact.address"
+    },
+    "amenties": {
+      "type": "component",
+      "repeatable": false,
+      "component": "features.amenties"
+    },
+    "Contacts": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contact.phone"
+    }
+  }
+}

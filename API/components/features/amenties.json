@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_features_amenties",
+  "info": {
+    "name": "amenties",
+    "icon": "box-open",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "CarParking": {
+      "type": "boolean"
+    },
+    "Restrooms": {
+      "type": "boolean",
+      "default": true
+    },
+    "AirConditioning": {
+      "type": "boolean",
+      "default": true
+    },
+    "Kitchen": {
+      "type": "boolean"
+    },
+    "Furnitures": {
+      "type": "boolean"
+    }
+  }
+}
