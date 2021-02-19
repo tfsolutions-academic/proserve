@@ -1,8 +1,10 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
+import { Card } from 'primereact/card';
 
 export default function Home() {
   return (
+    <Card>
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
@@ -61,5 +63,6 @@ export default function Home() {
         </a>
       </footer>
     </div>
+    </Card>
   )
 }
