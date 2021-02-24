@@ -4,6 +4,7 @@ import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 import '../styles/globals.css';
 
+
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
