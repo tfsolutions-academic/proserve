@@ -12,9 +12,10 @@ import { Sidebar } from 'primereact/sidebar';
 import { Button } from 'primereact/button';
 import EventsByDate from '../components/events_by_date';
 import Login from '../components/login';
+import UserInfo from '../components/user_info';
 
 const start = <img alt="logo" src="/images/logo.png"  height="50" className="p-mr-2"></img>;
-const end = <InputText placeholder="Search" type="text" />;
+const end = <UserInfo />;
 
 const menuItems = [
   {
