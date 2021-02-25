@@ -1,6 +1,6 @@
-import {useState} from 'react';
+import {useState, useContext, useEffect} from 'react';
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import AppContext from '../utils/appContext';
 import { Card } from 'primereact/card';
 import { Menubar } from 'primereact/menubar';
 import { InputText } from 'primereact/inputtext';
@@ -42,7 +42,72 @@ const products = [
 ];
 
 export default function Home() {
+  const appContext = useContext(AppContext);
   const [visibleRight, setVisibleRight] = useState(false);
+
+
+  const fetchData = async (data) =>{
+    /*
+    const queryString = `events(limit: 5){
+            id
+            name
+            start_date
+            end_date
+            venue{
+              name
+              address{
+                address1
+                address2
+                city
+                state
+                pincode
+              }
+            }
+            orgainizer{
+              name
+              contact{
+                name
+                number
+              }
+            }
+          }
+        }`;
+    */
+    const queryString = `query {
+                            events(limit: 5){
+                              id
+                              name
+                              start_date
+                              end_date
+                              venue{
+                                name
+                                address{
+                                  address1
+                                  address2
+                                  city
+                                  state
+                                  pincode
+                                }
+                              }
+                            }
+                        }`;
+
+    try{
+        const result = await appContext.axiosInstance.post(
+          '/graphql',
+          { query : queryString },
+          { headers: { 'Content-Type' : 'application/json' } });
+        console.log("GraphQL Result", result);
+    }catch(err){
+        console.log(err);
+    }
+    finally{
+    }
+  } 
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const onMenuItemClicked = (eventargs) => {
     console.log(eventargs);
