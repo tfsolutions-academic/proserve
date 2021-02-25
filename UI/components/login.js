@@ -5,13 +5,12 @@ import { InputText } from 'primereact/inputtext';
 import { Password } from 'primereact/password';
 import { ProgressSpinner } from 'primereact/progressspinner';
 import { Messages } from 'primereact/messages';
-import { Message } from 'primereact/message';
 import AppContext from '../utils/appContext';
 
 const Login = (props) => {
     const appContext = useContext(AppContext);
     const msg = useRef(null);
-    const { register, handleSubmit, control, errors, formState } = useForm();
+    const { handleSubmit, control } = useForm();
     const [isProcessing, setIsProcessing] = useState(false);
 
     const onSubmit = async (data) =>{
