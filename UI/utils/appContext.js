@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axiosInstance from './axiosSettings';
+import graphQlBroker from './graphQlBroker';
 
 const AppContext = React.createContext({});
 
@@ -7,6 +8,7 @@ export const AppContextProvider = AppContext.Provider;
 
 export const AppContextValue = {
     axiosInstance : axiosInstance,
+    graphQlBroker : graphQlBroker,
     isAuthenticated : async ()=>{
         try{
           const result = await axiosInstance.get('/auth-check');
