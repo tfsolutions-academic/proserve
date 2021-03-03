@@ -35,8 +35,8 @@ const venueEntity = {
         }
     ],
     "published_at": new Date().toISOString(),
-    "created_by": "proserve admin",
-    "updated_by": "proserve admin"
+    "created_by": "1",
+    "updated_by": "1"
 }
 
 const orgainizerEntity = {
@@ -50,8 +50,37 @@ const orgainizerEntity = {
       }
     ],
     "published_at": new Date().toISOString(),
-    "created_by": "proserve admin",
-    "updated_by": "proserve admin"
+    "created_by": "1",
+    "updated_by": "1"
+}
+
+const eventEntity = () => {
+    
+    const generateDates = (gapInDays) => {
+        const startDate = new Date(faker.date.between(new Date(2021,1,1), new Date(2021,12,31)));
+        let endDate = startDate;
+        endDate = new Date(endDate.setDate(endDate.getDate() + gapInDays));
+        return{
+            startDate : startDate,
+            endDate : endDate
+        }
+    }
+
+    const dateRange = generateDates(faker.random.number({min : 1, max :3}));
+
+    return {
+        "name": faker.lorem.sentence(8),
+        "description": faker.lorem.sentence(15),
+        "start_date": dateRange.startDate.toISOString(),
+        "end_date": dateRange.endDate.toISOString(),
+        "type": faker.random.arrayElement(['marriage','birthday','retirement','expo','spritual','other']),
+        "venue": faker.random.number({min : 1, max : 224}),
+        "orgainizer": faker.random.number({min : 1, max : 64}),
+        "RSVPContent": faker.lorem.sentence(30),
+        "published_at": new Date().toISOString(),
+        "created_by": "1",
+        "updated_by": "1"
+    }
 }
 
 const EntityGenerator = (props) => {
@@ -70,6 +99,9 @@ const EntityGenerator = (props) => {
         for(let i=0;i<=count-1;i++){
             try{
                 let entity = props.entity;
+                if (typeof props.entity == 'function'){
+                    entity = props.entity();
+                }
                 await postData(entity);
                 successCnt++;
             }catch(er){
@@ -123,7 +155,7 @@ const DataGenerator = (props) => {
                     </div>
 
                     <div className="p-col-12 p-md-4">
-                        
+                    <EntityGenerator header="Events" service={appContext.axiosInstance} entity={eventEntity} endPoint="/events" />
                     </div>
                 </div>
             </Panel>
